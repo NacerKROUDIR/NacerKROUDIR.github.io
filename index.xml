@@ -6,7 +6,8 @@
     <description>Recent content on Nacer KROUDIR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2023 Nacer Kroudir</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2023 Nacer Kroudir</copyright>
+    <lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
       <link>/resume/</link>
@@ -14,6 +15,15 @@
       
       <guid>/resume/</guid>
       <description>Data science and artificial intelligence enthusiast with a keen interest in turning raw data into meaningful stories.</description>
+    </item>
+    
+    <item>
+      <title>Data Science &amp; Analytics Virtual Experience Program - BCG</title>
+      <link>/blogs/data-science-and-analytics-virtual-experience-program-bcg/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/data-science-and-analytics-virtual-experience-program-bcg/</guid>
+      <description>PowerCo supplies gas and electricity to corporate, SME, and residential customers. The changing energy market in Europe has led many SMEs to switch away from PowerCo, making customer retention challenging.</description>
     </item>
     
   </channel>
