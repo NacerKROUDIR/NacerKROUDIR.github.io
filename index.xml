@@ -9,15 +9,6 @@
     <copyright>© 2023 Nacer Kroudir</copyright>
     <lastBuildDate>Sat, 12 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
-      <link>/resume/</link>
-      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/resume/</guid>
-      <description>Data science and artificial intelligence student with a keen interest in turning raw data into meaningful stories.</description>
-    </item>
-    
-    <item>
       <title>Artificial Intelligence Virtual Experience Program - Cognizant</title>
       <link>/blogs/artificial-intelligence-virtual-experience-program-cognizant/</link>
       <pubDate>Sat, 12 Aug 2023 00:00:00 +0000</pubDate>
@@ -33,6 +24,15 @@
       
       <guid>/blogs/data-science-and-analytics-virtual-experience-program-bcg/</guid>
       <description>PowerCo supplies gas and electricity to corporate, SME, and residential customers. The changing energy market in Europe has led many SMEs to switch away from PowerCo, making customer retention challenging.</description>
+    </item>
+    
+    <item>
+      <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
+      <link>/resume/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Data science and artificial intelligence student with a keen interest in turning raw data into meaningful stories.</description>
     </item>
     
   </channel>
