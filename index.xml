@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 Nacer Kroudir</copyright>
-    <lastBuildDate>Sat, 12 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
+      <link>/resume/</link>
+      <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Data science and artificial intelligence fresh graduate from ENSIMAG with a keen interest in turning raw data into meaningful stories.</description>
+    </item>
+    
+    <item>
+      <title>How to Run Open source LLMs with a ChatGPT-Like Web Experience</title>
+      <link>/blogs/how-to-run-open-source-llms-with-a-chatgpt-like-web-experience/</link>
+      <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/how-to-run-open-source-llms-with-a-chatgpt-like-web-experience/</guid>
+      <description>Open-source large language models (LLMs) offer significant advantages, including enhanced accessibility, transparency, and customization. In this blog, we will explore how to install and run Ollama&amp;rsquo;s LLaMA 3.1 model locally, and deploy it using Docker and Open WebUI for a ChatGPT-like interactive experience.</description>
+    </item>
+    
     <item>
       <title>Artificial Intelligence Virtual Experience Program - Cognizant</title>
       <link>/blogs/artificial-intelligence-virtual-experience-program-cognizant/</link>
@@ -24,15 +42,6 @@
       
       <guid>/blogs/data-science-and-analytics-virtual-experience-program-bcg/</guid>
       <description>PowerCo supplies gas and electricity to corporate, SME, and residential customers. The changing energy market in Europe has led many SMEs to switch away from PowerCo, making customer retention challenging.</description>
-    </item>
-    
-    <item>
-      <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
-      <link>/resume/</link>
-      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/resume/</guid>
-      <description>Data science and artificial intelligence student with a keen interest in turning raw data into meaningful stories.</description>
     </item>
     
   </channel>
