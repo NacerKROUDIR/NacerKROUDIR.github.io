@@ -7,13 +7,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 Nacer Kroudir</copyright>
-    <lastBuildDate>Tue, 30 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent</title>
+      <link>/tags/agent/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI</title>
+      <link>/tags/ai/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ai/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>blogs</title>
       <link>/tags/blogs/</link>
-      <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>/tags/blogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation</title>
+      <link>/tags/evaluation/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/evaluation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GenAI</title>
+      <link>/tags/genai/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/genai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LLM</title>
+      <link>/tags/llm/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/llm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>/tags/resume/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/resume/</guid>
       <description></description>
     </item>
     

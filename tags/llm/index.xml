@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM on Nacer KROUDIR</title>
+    <link>/tags/llm/</link>
+    <description>Recent content in LLM on Nacer KROUDIR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2023 Nacer Kroudir</copyright>
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!</title>
+      <link>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</guid>
+      <description>Open-source large language models (LLMs) offer significant advantages, including enhanced accessibility, transparency, and customization. In this blog, we will explore how to install and run Ollama&amp;rsquo;s LLaMA 3.1 model locally, and deploy it using Docker and Open WebUI for a ChatGPT-like interactive experience.</description>
+    </item>
+    
+  </channel>
+</rss>

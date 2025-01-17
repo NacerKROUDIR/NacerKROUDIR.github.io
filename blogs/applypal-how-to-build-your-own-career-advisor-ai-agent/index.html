@@ -1,0 +1,791 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="rgb(255,255,255)" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent! &middot; Nacer KROUDIR</title>
+    <meta name="title" content="ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent! &middot; Nacer KROUDIR" />
+  
+  <meta name="description" content="A walkthrough tutorial for a Career Advisor AI Agent with features like profile evaluation, question answering!" />
+  
+  
+  
+  <link rel="canonical" href="/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.17fc506b1c26b1bbc9a782ffffc510d9ecbfef39adb801fd6c673c614f713ffe.css"
+    integrity="sha256-F/xQaxwmsbvJp4L//8UQ2ey/7zmtuAH9bGc8YU9xP/4="
+  />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.022d0ebc3b46a335eb1c7ef79b7f2de143d7cd5156d433638592ef1ce5f8554e.js" integrity="sha256-Ai0OvDtGozXrHH73m38t4UPXzVFW1DNjhZLvHOX4VU4="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+    
+    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.84ea74257c78d510b25594590b1aca93c37a6877605bb4b7493b685aac753491.js" integrity="sha256-hOp0JXx41RCyVZRZCxrKk8N6aHdgW7S3STtoWqx1NJE=" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!" />
+<meta property="og:description" content="A walkthrough tutorial for a Career Advisor AI Agent with features like profile evaluation, question answering!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2025-01-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-01-15T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!"/>
+<meta name="twitter:description" content="A walkthrough tutorial for a Career Advisor AI Agent with features like profile evaluation, question answering!"/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blogs",
+    "name": "ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!",
+    "headline": "ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!",
+    "description": "A walkthrough tutorial for a Career Advisor AI Agent with features like profile evaluation, question answering!",
+    "abstract": "Open-source large language models (LLMs) offer significant advantages, including enhanced accessibility, transparency, and customization. In this blog, we will explore how to install and run Ollama\u0026rsquo;s LLaMA 3.1 model locally, and deploy it using Docker and Open WebUI for a ChatGPT-like interactive experience.",
+    "inLanguage": "en",
+    "url" : "\/blogs\/applypal-how-to-build-your-own-career-advisor-ai-agent\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Hello, I\u0027m Nacer 👋"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-01-15T00:00:00\u002b00:00",
+    "datePublished": "2025-01-15T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-01-15T00:00:00\u002b00:00",
+    
+    "keywords": ["blogs","AI","GenAI","Agent","Evaluation","Resume","LLM"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2705"
+  }]
+  </script>
+
+
+  
+  <meta name="author" content="Hello, I&#39;m Nacer 👋" />
+  
+    
+      <link href="mailto:nacerkroudir@gmail.com" rel="me" />
+    
+      <link href="https://github.com/NacerKROUDIR" rel="me" />
+    
+      <link href="https://www.linkedin.com/in/nacerkroudir/" rel="me" />
+    
+      <link href="https://medium.com/@nacerkroudir" rel="me" />
+    
+      <link href="#ZgotmplZ" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold pe-2 text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral print:hidden sm:py-10">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Nacer KROUDIR</a
+  >
+
+      
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col ltr:text-right rtl:text-left sm:flex-row">
+        
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/resume/"
+                  title="Hi, I&#39;m Nacer KROUDIR 👋"
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Resume</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/blogs/"
+                  title="Blogs"
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blogs</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="https://github.com/NacerKROUDIR"
+                  title=""
+                  target="_blank"
+                  >
+                    <span
+                      class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                    ><span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="https://www.linkedin.com/in/nacerkroudir/"
+                  title=""
+                  target="_blank"
+                  >
+                    <span
+                      class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                    ><span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="https://medium.com/@nacerkroudir"
+                  title=""
+                  target="_blank"
+                  >
+                    <span
+                      class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                    ><span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M180.5,74.262C80.813,74.262,0,155.633,0,256S80.819,437.738,180.5,437.738,361,356.373,361,256,280.191,74.262,180.5,74.262Zm288.25,10.646c-49.845,0-90.245,76.619-90.245,171.095s40.406,171.1,90.251,171.1,90.251-76.619,90.251-171.1H559C559,161.5,518.6,84.908,468.752,84.908Zm139.506,17.821c-17.526,0-31.735,68.628-31.735,153.274s14.2,153.274,31.735,153.274S640,340.631,640,256C640,171.351,625.785,102.729,608.258,102.729Z"/></svg>
+</span></span></a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                
+                
+                  <button
+                    id="search-button-1"
+                    title="Search (/)"
+                  >
+                    
+                      <span
+                        class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                      ><span class="relative inline-block align-text-bottom px-1 icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                        class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                        ></span
+                      >
+                    
+                  </button>
+                
+              
+            </li>
+          
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >Nacer KROUDIR</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/blogs/"
+      >Blogs</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/"
+      >ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!
+      </h1>
+      <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <span title="Reading time">13 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+
+
+      </div>
+      
+    </header>
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first px-0 lg:order-last lg:max-w-xs lg:ps-8">
+          <div class="toc pe-5 print:hidden lg:sticky lg:top-10">
+            <details open class="-ms-5 mt-0 overflow-hidden rounded-lg ps-5">
+  <summary
+    class="-ms-5 block cursor-pointer bg-neutral-100 py-1 ps-5 text-lg font-semibold text-neutral-800 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden"
+  >
+    Table of Contents
+  </summary>
+  <div class="-ms-5 border-s border-dotted border-neutral-300 py-2 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#agentic-ai">Agentic AI</a></li>
+        <li><a href="#used-technologies">Used Technologies</a></li>
+      </ul>
+    </li>
+    <li><a href="#key-features">Key Features</a>
+      <ul>
+        <li><a href="#resume-upload-and-parsing">Resume Upload and Parsing</a></li>
+        <li><a href="#job-description-input">Job Description Input</a></li>
+        <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+        <li><a href="#chat-interface">Chat Interface</a></li>
+        <li><a href="#history">History</a></li>
+      </ul>
+    </li>
+    <li><a href="#future-and-potential-improvements">Future and Potential Improvements</a>
+      <ul>
+        <li><a href="#integrate-additional-llm-models">Integrate additional LLM models</a></li>
+        <li><a href="#add-the-ability-to-provide-a-job-url">Add the Ability to Provide a Job URL</a></li>
+        <li><a href="#job-opportunity-scraper">Job Opportunity Scraper</a></li>
+      </ul>
+    </li>
+    <li><a href="#challenges-and-learnings">Challenges and Learnings</a>
+      <ul>
+        <li><a href="#output-format-for-the-evaluation-ai-agent">Output Format for the Evaluation AI Agent</a></li>
+        <li><a href="#rethinking-the-need-for-retrieval-augmented-generation-rag">Rethinking the Need for Retrieval-Augmented Generation (RAG)</a></li>
+        <li><a href="#designing-the-frontend-for-optimal-uiux">Designing the Frontend for Optimal UI/UX</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+          </div>
+        </div>
+      
+      <div class="min-w-0 min-h-0 max-w-prose grow">
+        <p>In today’s competitive job market, crafting the perfect job application can be a daunting task. To make the process easier, I built a Career Advisor AI Agent—a personalized assistant that evaluates your resume for a specific job description and helps you tailor your application. By leveraging the power of GPT-4 and LangChain, this tool provides a score and highlights positive and negative points of your resume across four key criteria—Technical Skills, Experience, Education, and Soft Skills—along with a global score. But that’s not all! The agent also features an interactive chat interface where you can ask questions, like requesting a customized motivation letter tailored to the job description, and get actionable advice using direct references from your resume.</p>
+<p>This blog walks you through how I built this project, including the tools and techniques used, with code snippets and insights along the way. Before diving in, check out this quick demo video showcasing the project in action!</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/pkp-zBxE46M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<hr>
+<h2 id="introduction" class="relative group">Introduction <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a></span></h2>
+<h3 id="agentic-ai" class="relative group">Agentic AI <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#agentic-ai" aria-label="Anchor">#</a></span></h3>
+<p>Agentic AI refers to AI systems that act as intelligent agents, capable of autonomously performing tasks and making decisions on behalf of users. These systems are typically designed to assist in a specific domain by interpreting and responding to input from users, offering personalized solutions, and improving over time through interaction.</p>
+<p>The growing popularity of Agentic AI can be attributed to several factors:</p>
+<ul>
+<li><strong>Automation of Repetitive Tasks:</strong> AI agents can handle tasks that would otherwise be time-consuming for individuals, such as scheduling, answering emails, or generating tailored content. This level of automation frees up users to focus on more complex and creative work.</li>
+<li><strong>Advances in Natural Language Processing (NLP):</strong> With the rise of sophisticated NLP models, such as OpenAI&rsquo;s GPT series, Agentic AI systems can engage in meaningful conversations, interpret instructions, and offer detailed responses, making them much more interactive and efficient than earlier AI systems.</li>
+<li><strong>Personalization:</strong> By processing large amounts of data and learning from user interactions, these AI systems can offer highly personalized advice and solutions. For example, in the case of career development, an AI agent can evaluate resumes against specific job descriptions and provide tailored recommendations.</li>
+<li><strong>Integration with Existing Platforms:</strong> Agentic AI can be integrated into widely used platforms like Slack, Zoom, or in this case, job boards and recruitment systems. These integrations make it easy for users to adopt AI in their daily routines without needing to switch to new tools.</li>
+</ul>
+<p>Some common tasks automated by Agentic AI include:</p>
+<ul>
+<li><strong>Content Generation:</strong> Writing articles, social media posts, or reports.</li>
+<li><strong>Customer Support:</strong> Chatbots that handle inquiries, provide recommendations, and solve problems in real-time.</li>
+<li><strong>Data Analysis:</strong> Automating the process of cleaning, analyzing, and visualizing data.</li>
+<li><strong>Personalized Recommendations:</strong> Tailoring advice, such as for job applications, product suggestions, or learning paths.</li>
+</ul>
+<h3 id="used-technologies" class="relative group">Used Technologies <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#used-technologies" aria-label="Anchor">#</a></span></h3>
+<p>The Career Advisor AI Agent relies on a combination of powerful tools and technologies to deliver seamless functionality and an intuitive user experience. Below is a quick overview of the key components that power this AI-driven tool:</p>
+<ul>
+<li>
+<p><strong><a
+  href="https://python.langchain.com/docs/introduction/"
+  
+  target="_blank" rel="noreferrer noopener"
+>LangChain</a></strong>: LangChain is a framework designed for developing applications powered by language models (such as GPT-4). It simplifies the process of integrating large language models (LLMs) with other tools and data sources, allowing you to build more sophisticated AI-driven applications. In this project, LangChain is used to orchestrate the interactions between the resume, job description, and the evaluation logic, helping to create a coherent and context-aware AI agent. LangChain&rsquo;s ability to interface with multiple data sources and APIs makes it a key tool for handling complex workflows and decision-making processes.</p>
+</li>
+<li>
+<p><strong><a
+  href="https://platform.openai.com/api-keys"
+  
+  target="_blank" rel="noreferrer noopener"
+>OpenAI API (GPT-4)</a></strong>: The OpenAI API provides access to some of the most powerful language models available today, including GPT-4. In the Career Advisor AI Agent, GPT-4 is used to process both the resume and job description, evaluating them based on criteria like technical skills, experience, education, and soft skills. Additionally, GPT-4 powers the chat interface, allowing users to interact with the AI agent for personalized advice, feedback, and even generating motivation letters. Its advanced natural language understanding makes it ideal for the complex tasks of matching resumes to job descriptions and responding to user queries in a meaningful way.</p>
+</li>
+<li>
+<p><strong><a
+  href="https://docs.streamlit.io/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Streamlit</a></strong>: Streamlit is a Python framework for building interactive web applications with minimal effort. It allows developers to create user-friendly interfaces that can be easily deployed and shared. Streamlit has been widely adopted by developers, particularly for quick demos and proof-of-concept (POC) projects, due to its simplicity and fast integration capabilities. In the context of Generative AI (GenAI), Streamlit provides an efficient way to showcase AI models and their capabilities in an intuitive and interactive manner. In this project, Streamlit serves as the front-end for the Career Advisor AI Agent, facilitating features like resume uploads, job description input, displaying evaluation results, and enabling the chat interface. Its ease of use and flexibility make it an ideal choice for rapidly developing AI applications and engaging users in a seamless experience.</p>
+</li>
+</ul>
+<h2 id="key-features" class="relative group">Key Features <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#key-features" aria-label="Anchor">#</a></span></h2>
+<h3 id="resume-upload-and-parsing" class="relative group">Resume Upload and Parsing <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#resume-upload-and-parsing" aria-label="Anchor">#</a></span></h3>
+<p>ApplyPal allows users to easily upload their resumes in PDF format using Streamlit&rsquo;s file uploader component. Once the resume is uploaded, <code>PyPDFLoader</code> from <code>langchain_community.document_loader</code> is used to extract the text from the PDF. This tool efficiently converts the resume&rsquo;s content into a structured format, making it ready for processing by the AI. By combining Streamlit’s simple file upload interface with <code>PyPDFLoader</code>’s powerful text extraction capabilities, the process is seamless, allowing the AI to analyze the resume and generate a comprehensive evaluation based on its content.</p>
+<h3 id="job-description-input" class="relative group">Job Description Input <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#job-description-input" aria-label="Anchor">#</a></span></h3>
+<p>ApplyPal simplifies the process of providing job descriptions by using a straightforward text input field. Users can copy and paste job descriptions from any platform, such as LinkedIn, Welcome to The Jungle, or company websites, directly into the input field. The structure of the text does not matter—whether it&rsquo;s a neatly formatted job posting or an unstructured snippet, the AI will effectively process it. This flexibility ensures that users can easily provide the required job description without worrying about formatting or compatibility issues, making the process intuitive and user-friendly.</p>
+<h3 id="evaluation-metrics" class="relative group">Evaluation Metrics <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#evaluation-metrics" aria-label="Anchor">#</a></span></h3>
+<p>To evaluate the candidate&rsquo;s resume against the job description, our AI Agent uses carefully crafted prompt engineering powered by LangChain. By defining specific criteria, the AI assesses the resume on multiple aspects, including Technical Skills, Experience, Education, Soft Skills, and a calculated Global Score. This approach ensures a comprehensive evaluation tailored to the job description.</p>
+<p>The evaluation process is designed to provide structured and actionable insights by leveraging a predefined output schema. Below is an example of how the evaluation is configured using LangChain:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">skills_schema</span> <span class="o">=</span> <span class="n">ResponseSchema</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;skills&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Evaluate how well the candidate&#39;s skills align with the job requirements. &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Output a relevance score between 0 and 10. Provide the matched skills in a Python list &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;under &#39;positive&#39; and the missing skills in a Python list under &#39;negative&#39;.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">experience_schema</span> <span class="o">=</span> <span class="n">ResponseSchema</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;experience&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Evaluate the relevance of the candidate&#39;s professional experience to the job requirements. &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Output a relevance score between 0 and 10. Provide a description of relevant experience &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;under &#39;positive&#39; and a description of missing or inadequate experience under &#39;negative&#39;.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">education_schema</span> <span class="o">=</span> <span class="n">ResponseSchema</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;education&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Evaluate how well the candidate&#39;s educational background matches the job requirements. &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Output a relevance score between 0 and 10. Provide a description of matching qualifications &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;under &#39;positive&#39; and missing qualifications under &#39;negative&#39;.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">soft_skills_schema</span> <span class="o">=</span> <span class="n">ResponseSchema</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;soft_skills&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Evaluate any additional relevant aspects, such as certifications, languages, or cultural fit. &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Output a relevance score between 0 and 10. Provide a description of relevant attributes &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;under &#39;positive&#39; and any missing or insufficient aspects under &#39;negative&#39;.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">global_score_schema</span> <span class="o">=</span> <span class="n">ResponseSchema</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;global_score&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Calculate a weighted global score between 0 and 10 by applying the following weights: &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Skills (40%), Experience (30%), Education (20%), Soft Skills (10%).&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">title_schema</span> <span class="o">=</span> <span class="n">ResponseSchema</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;title&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;The job title and company name. Format: &#39;job_title at company&#39;.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response_schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">skills_schema</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">experience_schema</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">education_schema</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">soft_skills_schema</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">global_score_schema</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">title_schema</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">output_parser</span> <span class="o">=</span> <span class="n">StructuredOutputParser</span><span class="o">.</span><span class="n">from_response_schemas</span><span class="p">(</span><span class="n">response_schemas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">format_instructions</span> <span class="o">=</span> <span class="n">output_parser</span><span class="o">.</span><span class="n">get_format_instructions</span><span class="p">()</span>
+</span></span></code></pre></div><p>By including these schemas in the prompt, the AI is guided to return a JSON (or Python dictionary) containing the evaluation results in a structured format. Here’s how the final prompt is constructed to ensure consistent and reliable output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">template</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Evaluate the relevance of the following resume to the job description
+</span></span></span><span class="line"><span class="cl"><span class="s2">           and provide detailed feedback</span><span class="se">\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">           Resume: </span><span class="si">{resume}</span><span class="se">\n\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">           Job Description: </span><span class="si">{job_description}</span><span class="se">\n\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">           </span><span class="si">{format_instructions}</span><span class="se">\n</span><span class="s2">return the json only without additional paragraphs&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">)</span>
+</span></span></code></pre></div><p>By using this structured prompt, the AI generates output in a predefined format every time. This makes it easy to extract the information programmatically and present it to the user in a concise, clear, and visually appealing manner. Each evaluation criterion is scored on a scale of 0 to 10, with details about matched and missing elements provided for better clarity and actionable feedback.</p>
+<h3 id="chat-interface" class="relative group">Chat Interface <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#chat-interface" aria-label="Anchor">#</a></span></h3>
+<p>The Career Advisor AI includes an intuitive chat interface powered by GPT-4. This interface allows users to interact directly with the AI agent to ask tailored questions about the job application process. For instance, users can request a custom motivation letter, clarify specific job requirements, or seek personalized career advice based on their resume and the job description.</p>
+<p>To maintain context and consistency, the chat interface leverages Streamlit&rsquo;s <code>session_state</code> for memory management. This ensures that the user’s previous queries and the AI’s responses are stored and can be accessed throughout the session without loss of information.</p>
+<p>At the core of the chat functionality lies an initial system prompt that defines the AI&rsquo;s behavior. Below is the system prompt used to initialize the chat:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    You are a career advisor for a candidate with the resume delimited by &lt;&lt;&lt;&gt;&gt;&gt; and the job description delimited by ((( ))).
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Resume:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &lt;&lt;&lt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    </span><span class="si">{</span><span class="n">resume</span><span class="si">}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Job description:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    (((
+</span></span></span><span class="line"><span class="cl"><span class="s2">    </span><span class="si">{</span><span class="n">job_description</span><span class="si">}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    )))
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Answer the questions giving the given information only. If the candidate asks a question that you don&#39;t have an answer to, say that you don&#39;t know the answer.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This system prompt ensures that:</p>
+<ul>
+<li><strong>Contextual Relevance:</strong> The AI only uses the provided resume and job description to answer questions, keeping its responses accurate and specific.</li>
+<li><strong>Honesty:</strong> If the AI cannot infer an answer from the available information, it explicitly states, &ldquo;I don&rsquo;t know the answer.&rdquo;</li>
+<li><strong>Professional Guidance:</strong> The AI consistently behaves like a career advisor, providing helpful, job-specific recommendations.</li>
+</ul>
+<p>By combining the power of GPT-4 with a well-structured prompt and Streamlit’s session management, the chat interface offers a seamless and highly interactive user experience. Users can pick up conversations exactly where they left off, making the Career Advisor AI both practical and user-friendly.</p>
+<h3 id="history" class="relative group">History <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#history" aria-label="Anchor">#</a></span></h3>
+<p>One of the important features of ApplyPal that were added at the very end is its History Functionality, which ensures a seamless and personalized user experience. This feature automatically saves all relevant data from the user&rsquo;s interactions, including:</p>
+<ul>
+<li><strong>Job Descriptions:</strong> Each job description provided is saved alongside its evaluation.</li>
+<li><strong>Resume Evaluations:</strong> The scores and detailed feedback across the evaluation metrics (Technical Skills, Experience, Education, Soft Skills, and Global Score) are stored for future reference.</li>
+<li><strong>Chat History:</strong> Every interaction in the chat interface is logged, allowing users to resume their conversation with the AI exactly where they left off.</li>
+</ul>
+<p>This feature is built using Streamlit&rsquo;s <code>session_state</code> to handle temporary data storage during a session. It is currently basic and stored temporarily while ApplyPal is running; For persistent storage across sessions, a simple database or file-based approach can be employed. Each session can be tied to a unique identifier (e.g., the job title and date), ensuring that users can easily retrieve specific evaluations and conversations.</p>
+<p>Benefits for Users:</p>
+<ul>
+<li><strong>Convenience:</strong> Users can revisit previous evaluations without needing to re-upload their resume or job description.</li>
+<li><strong>Continuity:</strong> Conversations with the AI remain intact, making it easier to pick up discussions without starting over.</li>
+<li><strong>Personalization:</strong> By having a history of their interactions, users can compare evaluations for different jobs and refine their applications accordingly.</li>
+</ul>
+<div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
+  <span class="pe-3 text-primary-400">
+    <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+  </span>
+  <span class="dark:text-neutral-300">For those who want to get their hands dirty with code and dive deep into the implementation, you can find the project in this <a
+  href="https://github.com/NacerKROUDIR/AI_Web_Scraper"
+  
+  target="_blank" rel="noreferrer noopener"
+>repository</a>.</span>
+</div>
+
+<h2 id="future-and-potential-improvements" class="relative group">Future and Potential Improvements <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#future-and-potential-improvements" aria-label="Anchor">#</a></span></h2>
+<p>While the current version of the Career Advisor AI offers robust features, there’s always room for innovation and expansion. In addition to the database that saves user histories for later access, several exciting ideas and enhancements could take this project to the next level:</p>
+<h3 id="integrate-additional-llm-models" class="relative group">Integrate additional LLM models <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#integrate-additional-llm-models" aria-label="Anchor">#</a></span></h3>
+<p>Expanding the project to include open-source, free models that run locally (e.g., <strong><a
+  href="https://www.llama.com/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Llama</a></strong> or <strong><a
+  href="https://mistral.ai/fr/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Mistral</a></strong>) would reduce dependency on APIs and lower costs for users. This would also make the tool more accessible to those who prefer self-hosted solutions.</p>
+<h3 id="add-the-ability-to-provide-a-job-url" class="relative group">Add the Ability to Provide a Job URL <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#add-the-ability-to-provide-a-job-url" aria-label="Anchor">#</a></span></h3>
+<p>Instead of manually inputting or pasting the job description, users could simply provide a URL to the job posting. A scraper could then extract relevant information directly from platforms like LinkedIn or Welcome to The Jungle, making the process even faster and more seamless.</p>
+<h3 id="job-opportunity-scraper" class="relative group">Job Opportunity Scraper <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#job-opportunity-scraper" aria-label="Anchor">#</a></span></h3>
+<p>A more advanced feature could involve integrating a scraper that searches job platforms based on the user&rsquo;s resume. By analyzing the resume, the AI could recommend opportunities that align with the user&rsquo;s skills, experience, and preferences, directly pulling relevant jobs from platforms like LinkedIn, Welcome to The Jungle, or other job boards.</p>
+<div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
+  <span class="pe-3 text-primary-400">
+    <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 32C114.6 32 .0272 125.1 .0272 240c0 49.63 21.35 94.98 56.97 130.7c-12.5 50.37-54.27 95.27-54.77 95.77c-2.25 2.25-2.875 5.734-1.5 8.734C1.979 478.2 4.75 480 8 480c66.25 0 115.1-31.76 140.6-51.39C181.2 440.9 217.6 448 256 448c141.4 0 255.1-93.13 255.1-208S397.4 32 256 32z"/></svg>
+</span>
+  </span>
+  <span class="dark:text-neutral-300">This project is an evolving work, and I believe collaboration is key to unlocking its full potential. If you have ideas, suggestions, or skills that could contribute to this project, I’d love to hear from you! Whether you’re an AI enthusiast, a developer, or a career coach with insights to share, feel free to reach out and join the journey of refining this tool further. Together, we can make it even more impactful for job seekers. You can contact me by <a
+  href="mailto:nacerkroudir@gmail.com"
+  
+  
+>Email</a> or DM me on <a
+  href="https://www.linkedin.com/in/nacerkroudir"
+  
+  target="_blank" rel="noreferrer noopener"
+>Linkedin</a>.</span>
+</div>
+
+<h2 id="challenges-and-learnings" class="relative group">Challenges and Learnings <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#challenges-and-learnings" aria-label="Anchor">#</a></span></h2>
+<p>Every project comes with its own set of challenges, and building the Career Advisor AI was no exception. Here are some of the key obstacles I faced and the lessons I learned along the way:</p>
+<h3 id="output-format-for-the-evaluation-ai-agent" class="relative group">Output Format for the Evaluation AI Agent <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#output-format-for-the-evaluation-ai-agent" aria-label="Anchor">#</a></span></h3>
+<p>One of the biggest challenges was ensuring that the LLM adhered strictly to a single output format. Since the data had to be parsed and visualized, consistency in the response format was critical. This was tackled by leveraging LangChain’s structured output tools and extensive prompt engineering. Although achieving this level of precision required multiple iterations and adjustments, the final solution ensures that the AI always returns a well-structured JSON or Python dictionary, which can be easily processed and displayed.</p>
+<h3 id="rethinking-the-need-for-retrieval-augmented-generation-rag" class="relative group">Rethinking the Need for Retrieval-Augmented Generation (RAG) <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#rethinking-the-need-for-retrieval-augmented-generation-rag" aria-label="Anchor">#</a></span></h3>
+<p>Initially, I approached the project as a potential use case for RAG (Retrieval-Augmented Generation). However, I quickly realized that the referenced data sources—namely, the resume and the job description—are concise enough to fit comfortably within GPT-4’s context window. Introducing a RAG mechanism, which involves splitting texts, creating embeddings, and retrieving specific parts, would have added unnecessary complexity without any significant benefits. Instead, I opted for a simpler approach that directly passes the relevant data to GPT-4, resulting in a more efficient and streamlined process.</p>
+<h3 id="designing-the-frontend-for-optimal-uiux" class="relative group">Designing the Frontend for Optimal UI/UX <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#designing-the-frontend-for-optimal-uiux" aria-label="Anchor">#</a></span></h3>
+<p>Creating a user-friendly and intuitive interface was another critical aspect of the project. I relied heavily on feedback and tips from my network to refine the design. A special thanks goes to <strong><a
+  href="https://www.linkedin.com/in/youcefsalemi/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Youcef Salemi</a></strong>, a UI/UX expert, who provided invaluable insights into improving the user experience, and <strong><a
+  href="https://www.linkedin.com/in/haithemherbadji/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Haithem Herbadji</a></strong>, a talented software engineer, who shared practical advice on interface design. Their guidance ensured that the platform is not only functional but also visually appealing and easy to navigate.</p>
+<h2 id="conclusion" class="relative group">Conclusion <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a></span></h2>
+<p><strong>ApplyPal</strong> 🧠 marks a significant achievement in my journey of deepening my experience with Generative AI and exploring the vast potential of Agentic AI. This project is more than just a tool; it’s a demonstration of how AI can be harnessed to simplify and enhance complex processes like job applications. By combining technologies like <code>LangChain</code>, <code>OpenAI’s GPT-4</code>, and <code>Streamlit</code>, I was able to create a functional, intuitive platform that empowers job seekers with actionable insights and personalized guidance.</p>
+<p>This project also reaffirmed the transformative potential of Agentic AI—AI agents capable of automating tasks, delivering intelligent feedback, and facilitating seamless human interaction. The possibilities are immense, and I’m excited to continue pushing the boundaries of what’s possible with these technologies.</p>
+
+      </div>
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+
+      
+  
+    
+    
+    
+      
+      
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="group flex text-right" href="/blogs/how-to-run-open-source-llms-with-a-chatgpt-like-web-experience/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >How to Run Open source LLMs with a ChatGPT-Like Web Experience</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                </span>
+              </span>
+              <span
+                class="ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&rarr;</span
+                ><span class="ltr:hidden rtl:inline">&larr;</span></span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+      </main><footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            © 2023 Nacer Kroudir
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    
+    
+      <div
+        class=" cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+      >
+        <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
+          <div
+            class="flex h-12 w-12 items-center justify-center dark:hidden"
+            title="Switch to dark appearance"
+          >
+            <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div
+            class="hidden h-12 w-12 items-center justify-center dark:flex"
+            title="Switch to light appearance"
+          >
+            <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url=""
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative inline-block align-text-bottom px-1 icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>
