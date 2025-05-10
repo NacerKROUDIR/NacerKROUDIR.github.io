@@ -9,21 +9,21 @@
     <copyright>© 2023 Nacer Kroudir</copyright>
     <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
+      <link>/resume/</link>
+      <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>I&amp;rsquo;m Nacer, a data engineer at Orange Innovation and a Master&amp;rsquo;s student in Big Data at the University of Paris 8 Vincennes-Saint-Denis, with a strong foundation in data science and a growing passion for AI.</description>
+    </item>
+    
+    <item>
       <title>ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!</title>
       <link>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</guid>
       <description>This blog explores Agentic AI, highlighting its ability to autonomously perform personalized tasks like resume evaluation, career guidance, and application tailoring using advanced NLP models. It showcases ApplyPal, a Career Advisor AI Agent built with GPT-4, LangChain, and Streamlit</description>
-    </item>
-    
-    <item>
-      <title>Hi, I&#39;m Nacer KROUDIR 👋</title>
-      <link>/resume/</link>
-      <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
-      
-      <guid>/resume/</guid>
-      <description>Data science and artificial intelligence fresh graduate from ENSIMAG with a keen interest in turning raw data into meaningful stories.</description>
     </item>
     
     <item>
