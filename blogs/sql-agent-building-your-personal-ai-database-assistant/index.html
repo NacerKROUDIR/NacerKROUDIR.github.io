@@ -1,0 +1,1072 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="rgb(255,255,255)" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>SQL Agent 🤖 - Building Your Personal AI Database Assistant &middot; Nacer KROUDIR</title>
+    <meta name="title" content="SQL Agent 🤖 - Building Your Personal AI Database Assistant &middot; Nacer KROUDIR" />
+  
+  <meta name="description" content="A comprehensive guide to building a SQL Agent that converts natural language to database queries with powerful error handling and visualization capabilities." />
+  
+  
+  
+  <link rel="canonical" href="/blogs/sql-agent-building-your-personal-ai-database-assistant/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.17fc506b1c26b1bbc9a782ffffc510d9ecbfef39adb801fd6c673c614f713ffe.css"
+    integrity="sha256-F/xQaxwmsbvJp4L//8UQ2ey/7zmtuAH9bGc8YU9xP/4="
+  />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.022d0ebc3b46a335eb1c7ef79b7f2de143d7cd5156d433638592ef1ce5f8554e.js" integrity="sha256-Ai0OvDtGozXrHH73m38t4UPXzVFW1DNjhZLvHOX4VU4="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+    
+    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.84ea74257c78d510b25594590b1aca93c37a6877605bb4b7493b685aac753491.js" integrity="sha256-hOp0JXx41RCyVZRZCxrKk8N6aHdgW7S3STtoWqx1NJE=" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="SQL Agent 🤖 - Building Your Personal AI Database Assistant" />
+<meta property="og:description" content="A comprehensive guide to building a SQL Agent that converts natural language to database queries with powerful error handling and visualization capabilities." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blogs/sql-agent-building-your-personal-ai-database-assistant/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2025-05-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-05-10T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL Agent 🤖 - Building Your Personal AI Database Assistant"/>
+<meta name="twitter:description" content="A comprehensive guide to building a SQL Agent that converts natural language to database queries with powerful error handling and visualization capabilities."/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blogs",
+    "name": "SQL Agent 🤖 - Building Your Personal AI Database Assistant",
+    "headline": "SQL Agent 🤖 - Building Your Personal AI Database Assistant",
+    "description": "A comprehensive guide to building a SQL Agent that converts natural language to database queries with powerful error handling and visualization capabilities.",
+    "abstract": "This blog details the creation of a SQL Agent that bridges the gap between natural language and database queries using LLMs. Learn how to build an intelligent assistant that helps users interact with databases through conversation, execute SQL queries with detailed feedback, and visualize results effectively.",
+    "inLanguage": "en",
+    "url" : "\/blogs\/sql-agent-building-your-personal-ai-database-assistant\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Hello, I\u0027m Nacer 👋"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-05-10T00:00:00\u002b00:00",
+    "datePublished": "2025-05-10T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-05-10T00:00:00\u002b00:00",
+    
+    "keywords": ["AI","GenAI","Agent","SQL","Database","LLM","DataViz"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2215"
+  }]
+  </script>
+
+
+  
+  <meta name="author" content="Hello, I&#39;m Nacer 👋" />
+  
+    
+      <link href="mailto:nacerkroudir@gmail.com" rel="me" />
+    
+      <link href="https://github.com/NacerKROUDIR" rel="me" />
+    
+      <link href="https://www.linkedin.com/in/nacerkroudir/" rel="me" />
+    
+      <link href="https://medium.com/@nacerkroudir" rel="me" />
+    
+      <link href="#ZgotmplZ" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold pe-2 text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral print:hidden sm:py-10">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Nacer KROUDIR</a
+  >
+
+      
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col ltr:text-right rtl:text-left sm:flex-row">
+        
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/resume/"
+                  title="Hi, I&#39;m Nacer KROUDIR 👋"
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Resume</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/blogs/"
+                  title="Blogs"
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blogs</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="https://github.com/NacerKROUDIR"
+                  title=""
+                  target="_blank"
+                  >
+                    <span
+                      class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                    ><span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="https://www.linkedin.com/in/nacerkroudir/"
+                  title=""
+                  target="_blank"
+                  >
+                    <span
+                      class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                    ><span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="https://medium.com/@nacerkroudir"
+                  title=""
+                  target="_blank"
+                  >
+                    <span
+                      class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                    ><span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M180.5,74.262C80.813,74.262,0,155.633,0,256S80.819,437.738,180.5,437.738,361,356.373,361,256,280.191,74.262,180.5,74.262Zm288.25,10.646c-49.845,0-90.245,76.619-90.245,171.095s40.406,171.1,90.251,171.1,90.251-76.619,90.251-171.1H559C559,161.5,518.6,84.908,468.752,84.908Zm139.506,17.821c-17.526,0-31.735,68.628-31.735,153.274s14.2,153.274,31.735,153.274S640,340.631,640,256C640,171.351,625.785,102.729,608.258,102.729Z"/></svg>
+</span></span></a
+                >
+              
+            </li>
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                
+                
+                  <button
+                    id="search-button-1"
+                    title="Search (/)"
+                  >
+                    
+                      <span
+                        class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                      ><span class="relative inline-block align-text-bottom px-1 icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                        class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                        ></span
+                      >
+                    
+                  </button>
+                
+              
+            </li>
+          
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >Nacer KROUDIR</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/blogs/"
+      >Blogs</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/blogs/sql-agent-building-your-personal-ai-database-assistant/"
+      >SQL Agent 🤖 - Building Your Personal AI Database Assistant</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        SQL Agent 🤖 - Building Your Personal AI Database Assistant
+      </h1>
+      <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <span title="Reading time">11 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+
+
+      </div>
+      
+    </header>
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first px-0 lg:order-last lg:max-w-xs lg:ps-8">
+          <div class="toc pe-5 print:hidden lg:sticky lg:top-10">
+            <details open class="-ms-5 mt-0 overflow-hidden rounded-lg ps-5">
+  <summary
+    class="-ms-5 block cursor-pointer bg-neutral-100 py-1 ps-5 text-lg font-semibold text-neutral-800 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden"
+  >
+    Table of Contents
+  </summary>
+  <div class="-ms-5 border-s border-dotted border-neutral-300 py-2 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#the-database-access-challenge">The Database Access Challenge</a></li>
+        <li><a href="#technical-foundation">Technical Foundation</a></li>
+      </ul>
+    </li>
+    <li><a href="#key-features">Key Features</a>
+      <ul>
+        <li><a href="#natural-language-to-sql-translation">Natural Language to SQL Translation</a></li>
+        <li><a href="#advanced-error-handling-and-debugging">Advanced Error Handling and Debugging</a></li>
+        <li><a href="#direct-sql-execution-interface">Direct SQL Execution Interface</a></li>
+        <li><a href="#visualization-and-result-processing">Visualization and Result Processing</a></li>
+      </ul>
+    </li>
+    <li><a href="#future-and-potential-improvements">Future and Potential Improvements</a>
+      <ul>
+        <li><a href="#query-history-and-optimization">Query History and Optimization</a></li>
+        <li><a href="#predictive-query-completion">Predictive Query Completion</a></li>
+        <li><a href="#data-security-enhancements">Data Security Enhancements</a></li>
+        <li><a href="#cross-database-federation">Cross-Database Federation</a></li>
+      </ul>
+    </li>
+    <li><a href="#challenges-and-learnings">Challenges and Learnings</a>
+      <ul>
+        <li><a href="#sql-dialect-handling">SQL Dialect Handling</a></li>
+        <li><a href="#error-propagation-and-recovery">Error Propagation and Recovery</a></li>
+        <li><a href="#llm-context-management">LLM Context Management</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+          </div>
+        </div>
+      
+      <div class="min-w-0 min-h-0 max-w-prose grow">
+        <p>Databases are the backbone of modern applications, yet interacting with them often requires specialized knowledge of SQL. What if you could simply ask questions in plain English and get the data you need? That&rsquo;s the promise of the SQL Agent I&rsquo;ve built—an intelligent assistant that converts natural language queries into SQL, executes them against your database, and presents the results in an intuitive interface. Beyond just query conversion, this tool provides detailed error feedback, data visualization, and a direct SQL execution mode for power users. By combining the language understanding capabilities of Large Language Models with database connectivity, this project makes database interaction accessible to everyone, from business analysts without SQL knowledge to experienced developers looking to streamline their workflow.</p>
+<p>This blog details how I built this project, walking through the architecture, key components, and implementation details with code examples. Let&rsquo;s dive into how you can create your own SQL Agent to revolutionize your database workflows!</p>
+<hr>
+<h2 id="demo" class="relative group">Demo <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#demo" aria-label="Anchor">#</a></span></h2>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/Config_DB_hubc367fefbfb2cc7ec20f590e7b66beef_269932_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/Config_DB_hubc367fefbfb2cc7ec20f590e7b66beef_269932_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/Config_DB_hubc367fefbfb2cc7ec20f590e7b66beef_269932_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/Config_DB_hubc367fefbfb2cc7ec20f590e7b66beef_269932_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/Config_DB_hubc367fefbfb2cc7ec20f590e7b66beef_269932_660x0_resize_box_3.png"
+          
+        
+        alt="Config_DB"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">Configuring and Establishing the Database Connection</figcaption>
+    </figure>
+  
+
+</p>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/Init_Agent_hubc367fefbfb2cc7ec20f590e7b66beef_283600_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/Init_Agent_hubc367fefbfb2cc7ec20f590e7b66beef_283600_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/Init_Agent_hubc367fefbfb2cc7ec20f590e7b66beef_283600_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/Init_Agent_hubc367fefbfb2cc7ec20f590e7b66beef_283600_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/Init_Agent_hubc367fefbfb2cc7ec20f590e7b66beef_283600_660x0_resize_box_3.png"
+          
+        
+        alt="init_Agent"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">Initialising the SQL Agent and Checking Database Schema</figcaption>
+    </figure>
+  
+
+</p>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_1_hubc367fefbfb2cc7ec20f590e7b66beef_409243_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_1_hubc367fefbfb2cc7ec20f590e7b66beef_409243_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_1_hubc367fefbfb2cc7ec20f590e7b66beef_409243_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_1_hubc367fefbfb2cc7ec20f590e7b66beef_409243_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_1_hubc367fefbfb2cc7ec20f590e7b66beef_409243_660x0_resize_box_3.png"
+          
+        
+        alt="SQL Agent Result 1/3"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">SQL Agent Result 1/3</figcaption>
+    </figure>
+  
+
+</p>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_2_hubc367fefbfb2cc7ec20f590e7b66beef_371302_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_2_hubc367fefbfb2cc7ec20f590e7b66beef_371302_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_2_hubc367fefbfb2cc7ec20f590e7b66beef_371302_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_2_hubc367fefbfb2cc7ec20f590e7b66beef_371302_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_2_hubc367fefbfb2cc7ec20f590e7b66beef_371302_660x0_resize_box_3.png"
+          
+        
+        alt="SQL Agent Result 2/3"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">SQL Agent Result 2/3</figcaption>
+    </figure>
+  
+
+</p>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_3_hue2f8a4177779ee893b82f11abf036e07_409914_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_3_hue2f8a4177779ee893b82f11abf036e07_409914_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_3_hue2f8a4177779ee893b82f11abf036e07_409914_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_3_hue2f8a4177779ee893b82f11abf036e07_409914_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Agent_Result_3_hue2f8a4177779ee893b82f11abf036e07_409914_660x0_resize_box_3.png"
+          
+        
+        alt="SQL Agent Result 3/3"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">SQL Agent Result 3/3</figcaption>
+    </figure>
+  
+
+</p>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_1_hud7dc2c7bbadfb2a8b62cca77bef3c786_323705_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_1_hud7dc2c7bbadfb2a8b62cca77bef3c786_323705_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_1_hud7dc2c7bbadfb2a8b62cca77bef3c786_323705_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_1_hud7dc2c7bbadfb2a8b62cca77bef3c786_323705_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_1_hud7dc2c7bbadfb2a8b62cca77bef3c786_323705_660x0_resize_box_3.png"
+          
+        
+        alt="SQL Executer Result 1/2"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">SQL Executer Result 1/2</figcaption>
+    </figure>
+  
+
+</p>
+<p>
+
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="mx-auto my-0 rounded-md"
+        
+          
+            srcset="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_2_hud7dc2c7bbadfb2a8b62cca77bef3c786_272203_330x0_resize_box_3.png 330w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_2_hud7dc2c7bbadfb2a8b62cca77bef3c786_272203_660x0_resize_box_3.png 660w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_2_hud7dc2c7bbadfb2a8b62cca77bef3c786_272203_1024x0_resize_box_3.png 1024w,/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_2_hud7dc2c7bbadfb2a8b62cca77bef3c786_272203_1320x0_resize_box_3.png 2x"
+            src="/blogs/sql-agent-building-your-personal-ai-database-assistant/SQL_Executer_Result_2_hud7dc2c7bbadfb2a8b62cca77bef3c786_272203_660x0_resize_box_3.png"
+          
+        
+        alt="SQL Executer Result 2/2"
+        
+          loading="lazy"
+        
+      />
+      <figcaption class="text-center">SQL Executer Result 2/2</figcaption>
+    </figure>
+  
+
+</p>
+<h2 id="introduction" class="relative group">Introduction <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a></span></h2>
+<h3 id="the-database-access-challenge" class="relative group">The Database Access Challenge <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-database-access-challenge" aria-label="Anchor">#</a></span></h3>
+<p>Despite the ubiquity of databases in every organization, meaningful access to data remains limited to those with technical skills. This creates several challenges:</p>
+<ul>
+<li><strong>Knowledge Gap:</strong> Business users often depend on technical teams for data extraction, creating bottlenecks and delays.</li>
+<li><strong>Query Complexity:</strong> Even for those familiar with SQL, crafting complex queries can be time-consuming and error-prone.</li>
+<li><strong>Debugging Difficulty:</strong> When queries fail, pinpointing the exact cause can be challenging without proper error handling.</li>
+<li><strong>Results Interpretation:</strong> Raw data needs proper visualization to derive meaningful insights.</li>
+</ul>
+<p>The SQL Agent addresses these challenges by providing a natural language interface to databases, comprehensive error handling, and built-in visualization capabilities—effectively democratizing database access across technical and non-technical users alike.</p>
+<h3 id="technical-foundation" class="relative group">Technical Foundation <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#technical-foundation" aria-label="Anchor">#</a></span></h3>
+<p>The SQL Agent builds on several powerful technologies to deliver its functionality:</p>
+<ul>
+<li>
+<p><strong><a
+  href="https://python.langchain.com/docs/introduction/"
+  
+  target="_blank" rel="noreferrer noopener"
+>LangChain</a></strong>: This framework orchestrates the interactions between the user, the language model, and the database. It provides the tools to build an agent that can make decisions about how to handle queries, execute SQL, and process results. LangChain&rsquo;s agent framework is particularly valuable for creating a system that can reason about errors and adjust its approach accordingly.</p>
+</li>
+<li>
+<p><strong><a
+  href="https://platform.openai.com/api-keys"
+  
+  target="_blank" rel="noreferrer noopener"
+>LLM Integration</a></strong>: The SQL Agent supports both OpenAI models (like GPT-4) and local models through Ollama. This flexibility allows users to choose between cloud-based power and local privacy according to their needs. The LLMs provide the critical natural language understanding capability, translating user questions into SQL queries and explaining results in plain language.</p>
+</li>
+<li>
+<p><strong><a
+  href="https://www.sqlalchemy.org/"
+  
+  target="_blank" rel="noreferrer noopener"
+>SQLAlchemy</a></strong>: This powerful SQL toolkit and Object-Relational Mapping (ORM) library provides a flexible and secure way to connect to different database systems. It handles the execution of SQL queries and returns results in a structured format that can be easily processed.</p>
+</li>
+<li>
+<p><strong><a
+  href="https://docs.streamlit.io/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Streamlit</a></strong>: The front-end interface is built with Streamlit, which allows for rapid development of interactive web applications. Streamlit&rsquo;s components make it easy to display query results, visualizations, and provide user controls without complex web development.</p>
+</li>
+</ul>
+<h2 id="key-features" class="relative group">Key Features <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#key-features" aria-label="Anchor">#</a></span></h2>
+<h3 id="natural-language-to-sql-translation" class="relative group">Natural Language to SQL Translation <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#natural-language-to-sql-translation" aria-label="Anchor">#</a></span></h3>
+<p>The heart of the SQL Agent is its ability to transform natural language questions into valid SQL queries. This is accomplished through a carefully designed agent architecture using LangChain:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">initialize_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db_manager</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Initialize the agent with SQL tools and chains.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&#34;Please initialize the LLM first&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">db_manager</span> <span class="o">=</span> <span class="n">db_manager</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="c1"># Define tools</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tools</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Tool</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">&#34;execute_sql_query&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">execute_sql_tool</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">description</span><span class="o">=</span><span class="s2">&#34;&#34;&#34;Useful for when you need to execute a SQL query. 
+</span></span></span><span class="line"><span class="cl"><span class="s2">                Input should be a raw SQL query WITHOUT any surrounding quotes or function call syntax.
+</span></span></span><span class="line"><span class="cl"><span class="s2">                Example: SELECT * FROM table_name
+</span></span></span><span class="line"><span class="cl"><span class="s2">                NOT: ```sql SELECT * FROM table_name``` or &#34;SELECT * FROM table_name&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">                &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Tool</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">&#34;get_schema&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_schema_tool</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Useful for when you need to understand the database schema. Returns tables and their columns. No input is required for this tool.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># Define prompt template for the agent</span>
+</span></span><span class="line"><span class="cl">        <span class="n">prompt_template</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;You are a SQL expert that helps users query databases. 
+</span></span></span><span class="line"><span class="cl"><span class="s2">            
+</span></span></span><span class="line"><span class="cl"><span class="s2">        When asked a question, think through what tables and columns you need to query, then use the provided tools to execute SQL queries and return the results.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Always explain your reasoning in a clear, step-by-step manner. First understand what the user is asking for, then decide what SQL query would get that information, then execute it.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        </span><span class="si">{schema_context}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        IMPORTANT SQL QUERY GUIDELINES:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        1. ALWAYS quote column and table names with double quotes (e.g., &#34;teamID&#34; not teamID)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        2. For string matching, put string literals in single quotes: WHERE name = &#39;example&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        3. For aggregate functions like COUNT, AVG, SUM, etc., make sure to use an alias for readability
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        For your final answer, provide:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        1. A natural language explanation of the results
+</span></span></span><span class="line"><span class="cl"><span class="s2">        2. DO NOT include the SQL query in your answer - it will be displayed separately in the UI
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Tools:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        </span><span class="si">{tools}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Use the following format:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Question: the input question you must answer
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Thought: you should always think about what to do
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Action: the action to take, should be one of [</span><span class="si">{tool_names}</span><span class="s2">]
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Action Input: the input to the action (must be a string)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Observation: the result of the action
+</span></span></span><span class="line"><span class="cl"><span class="s2">        ... (this Thought/Action/Action Input/Observation can repeat N times)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Thought: I now know the final answer
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Final Answer: your final answer with explanation ONLY - do not include the SQL query
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        IMPORTANT: When using tools, you must provide ONLY the tool name without any parentheses or function call syntax. For example, use &#34;get_schema&#34; not &#34;get_schema()&#34;.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Begin!
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Question: </span><span class="si">{input}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        </span><span class="si">{agent_scratchpad}</span><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
+  <span class="pe-3 text-primary-400">
+    <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span>
+  </span>
+  <span class="dark:text-neutral-300">If you would like to get technical I highly recommend you checkout the full code implementation in <a
+  href="https://github.com/NacerKROUDIR/SQL_Agent"
+  
+  target="_blank" rel="noreferrer noopener"
+>this github repository</a></span>
+</div>
+
+<p>This approach uses a ReAct (Reasoning + Acting) pattern where the agent thinks through the problem, decides what actions to take, and executes them. The agent has access to two primary tools:</p>
+<ol>
+<li>A tool to execute SQL queries</li>
+<li>A tool to retrieve the database schema</li>
+</ol>
+<p>When a user asks a question like &ldquo;How many customers made purchases last month?&rdquo;, the agent:</p>
+<ol>
+<li>Reasons about the tables and relationships needed</li>
+<li>Fetches the schema to understand the database structure</li>
+<li>Formulates a SQL query that answers the question</li>
+<li>Executes the query and presents the results in natural language</li>
+</ol>
+<h3 id="advanced-error-handling-and-debugging" class="relative group">Advanced Error Handling and Debugging <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#advanced-error-handling-and-debugging" aria-label="Anchor">#</a></span></h3>
+<p>What sets this SQL Agent apart is its sophisticated error handling system. Rather than simply failing when a query has issues, the agent provides detailed diagnostics and attempts to self-correct:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Check if the DataFrame has error information</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;attrs&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;is_error&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">attrs</span> <span class="ow">and</span> <span class="n">df</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;is_error&#39;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">error_msg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown SQL error&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">debug_mode</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">debug_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;SQL Error: </span><span class="si">{</span><span class="n">error_msg</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Format error message for better readability</span>
+</span></span><span class="line"><span class="cl">    <span class="n">formatted_error</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;Error executing SQL query: </span><span class="si">{</span><span class="n">error_msg</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Add more context for common SQL errors</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;syntax error&#34;</span> <span class="ow">in</span> <span class="n">error_msg</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">formatted_error</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">This appears to be a syntax error. Please check your SQL syntax.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s2">&#34;does not exist&#34;</span> <span class="ow">in</span> <span class="n">error_msg</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="s2">&#34;column&#34;</span> <span class="ow">in</span> <span class="n">error_msg</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">formatted_error</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">The specified column does not exist in the table.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="s2">&#34;does not exist&#34;</span> <span class="ow">in</span> <span class="n">error_msg</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="s2">&#34;table&#34;</span> <span class="ow">in</span> <span class="n">error_msg</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">formatted_error</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">The specified table does not exist in the database.&#34;</span>
+</span></span></code></pre></div><p>This error handling system:</p>
+<ol>
+<li>Captures database errors during query execution</li>
+<li>Analyzes the error message to identify the cause</li>
+<li>Adds human-readable context to help users understand what went wrong</li>
+<li>Passes the error information back to the LLM agent for potential correction</li>
+</ol>
+<p>The result is a more resilient system that helps users learn from mistakes and understand database errors better. When a query fails, the system doesn&rsquo;t just say &ldquo;error&rdquo; - it explains what happened and often suggests how to fix it.</p>
+<h3 id="direct-sql-execution-interface" class="relative group">Direct SQL Execution Interface <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#direct-sql-execution-interface" aria-label="Anchor">#</a></span></h3>
+<p>For users who already know SQL or want more control, the SQL Agent provides a direct SQL execution interface:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sql_executor_tab</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Content for the SQL Executor tab&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&#34;SQL Executor&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Initialize session state variables if they don&#39;t exist</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;current_query&#34;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">current_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Handle the Clear Results action</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;clear_results_clicked&#34;</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span> <span class="ow">and</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">clear_results_clicked</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Reset the clear button state</span>
+</span></span><span class="line"><span class="cl">        <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">clear_results_clicked</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Clear results</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="s2">&#34;sql_executor_result&#34;</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">del</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">sql_executor_result</span>
+</span></span><span class="line"><span class="cl">        <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">current_query</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Direct SQL execution</span>
+</span></span><span class="line"><span class="cl">    <span class="n">direct_sql</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span><span class="s2">&#34;Enter SQL Query:&#34;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&#34;sql_input&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">execute_button</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&#34;Execute SQL&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>This interface provides several advantages:</p>
+<ol>
+<li><strong>Immediate Execution:</strong> Write SQL directly and see results instantly</li>
+<li><strong>Query Refining:</strong> Use the natural language interface to generate a starting query, then refine it manually</li>
+<li><strong>Learning Tool:</strong> See how the AI converts questions to SQL, then modify the generated queries to learn SQL</li>
+<li><strong>Detailed Feedback:</strong> Get the same sophisticated error handling and debugging information</li>
+</ol>
+<h3 id="visualization-and-result-processing" class="relative group">Visualization and Result Processing <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#visualization-and-result-processing" aria-label="Anchor">#</a></span></h3>
+<p>Beyond simply returning data, the SQL Agent automatically determines appropriate visualizations for query results:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">generate_visualization</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Generate an appropriate visualization based on the dataframe content.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Skip visualization for empty dataframes or those with too many columns</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">df</span><span class="o">.</span><span class="n">empty</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># Determine the number of numeric columns</span>
+</span></span><span class="line"><span class="cl">        <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># If there are two numeric columns, create a scatter plot</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeric_cols</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="o">.</span><span class="n">subheader</span><span class="p">(</span><span class="s2">&#34;Data Visualization&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">numeric_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">numeric_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="c1"># If there is one numeric column and one categorical, create a bar chart</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeric_cols</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">categorical_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">categorical_cols</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">st</span><span class="o">.</span><span class="n">subheader</span><span class="p">(</span><span class="s2">&#34;Data Visualization&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">categorical_col</span> <span class="o">=</span> <span class="n">categorical_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="c1"># Group by the categorical column and calculate mean of numeric column</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">categorical_col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>  <span class="c1"># Limit to 10 categories</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">df</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                        <span class="n">x</span><span class="o">=</span><span class="n">categorical_col</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                        <span class="n">y</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">numeric_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="n">categorical_col</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></div><p>The visualization system:</p>
+<ol>
+<li>Analyzes the returned data structure</li>
+<li>Determines the most appropriate visualization type</li>
+<li>Automatically generates charts using Plotly</li>
+<li>Provides user-friendly export options for further analysis</li>
+</ol>
+<p>This makes the SQL Agent not just a query tool but a complete data exploration system that helps users derive insights from their database.</p>
+<h2 id="future-and-potential-improvements" class="relative group">Future and Potential Improvements <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#future-and-potential-improvements" aria-label="Anchor">#</a></span></h2>
+<p>While the current SQL Agent provides robust functionality, several enhancements could take it to the next level:</p>
+<h3 id="query-history-and-optimization" class="relative group">Query History and Optimization <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#query-history-and-optimization" aria-label="Anchor">#</a></span></h3>
+<p>Implementing a system to track query history would allow the agent to learn from past interactions and improve future queries. This could include:</p>
+<ul>
+<li>Storing successful queries for similar questions</li>
+<li>Analyzing query performance and suggesting optimizations</li>
+<li>Building a personalized &ldquo;frequently asked questions&rdquo; system for each user</li>
+</ul>
+<h3 id="predictive-query-completion" class="relative group">Predictive Query Completion <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#predictive-query-completion" aria-label="Anchor">#</a></span></h3>
+<p>Similar to how modern code editors offer code completion, the SQL Agent could provide predictive SQL completion:</p>
+<ul>
+<li>Suggesting table and column names as users type</li>
+<li>Offering common query patterns based on context</li>
+<li>Auto-completing JOINs based on foreign key relationships</li>
+</ul>
+<h3 id="data-security-enhancements" class="relative group">Data Security Enhancements <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#data-security-enhancements" aria-label="Anchor">#</a></span></h3>
+<p>For enterprise deployment, additional security features would be valuable:</p>
+<ul>
+<li>Role-based access control to limit data visibility</li>
+<li>Query whitelisting to prevent potentially harmful operations</li>
+<li>Audit logging of all queries for compliance purposes</li>
+<li>Data masking for sensitive information</li>
+</ul>
+<h3 id="cross-database-federation" class="relative group">Cross-Database Federation <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#cross-database-federation" aria-label="Anchor">#</a></span></h3>
+<p>Expanding the agent to work across multiple databases simultaneously would unlock powerful capabilities:</p>
+<ul>
+<li>Querying data across different database systems</li>
+<li>Performing joins between tables in different databases</li>
+<li>Creating virtual views that combine data from multiple sources</li>
+</ul>
+<h2 id="challenges-and-learnings" class="relative group">Challenges and Learnings <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#challenges-and-learnings" aria-label="Anchor">#</a></span></h2>
+<p>Building the SQL Agent presented several interesting challenges and valuable lessons:</p>
+<h3 id="sql-dialect-handling" class="relative group">SQL Dialect Handling <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#sql-dialect-handling" aria-label="Anchor">#</a></span></h3>
+<p>One of the most significant challenges was handling different SQL dialects across database systems. PostgreSQL and MySQL have subtle differences that can cause queries to fail. The solution involved:</p>
+<ol>
+<li>Detecting the database type during connection</li>
+<li>Adjusting generated queries to match the specific dialect</li>
+<li>Creating a robust error handling system that could interpret errors from different database systems</li>
+</ol>
+<p>This highlighted the importance of abstraction layers that can handle system-specific details without exposing them to users.</p>
+<h3 id="error-propagation-and-recovery" class="relative group">Error Propagation and Recovery <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#error-propagation-and-recovery" aria-label="Anchor">#</a></span></h3>
+<p>Initially, when SQL errors occurred, the system would simply fail silently or with minimal information. Building a comprehensive error handling system required:</p>
+<ol>
+<li>Capturing and preserving error information at the database layer</li>
+<li>Parsing and enhancing error messages to make them user-friendly</li>
+<li>Properly propagating errors through the component layers</li>
+<li>Feeding errors back to the LLM agent to enable self-correction</li>
+</ol>
+<p>This taught me the value of designing for failure from the start and treating error handling as a first-class feature rather than an afterthought.</p>
+<h3 id="llm-context-management" class="relative group">LLM Context Management <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#llm-context-management" aria-label="Anchor">#</a></span></h3>
+<p>Another challenge was ensuring the LLM had sufficient context about the database schema without exceeding context limits. The solution involved:</p>
+<ol>
+<li>Dynamically fetching only the relevant schema information</li>
+<li>Caching schema data to reduce repeated lookups</li>
+<li>Carefully constructing prompts to include the most valuable context</li>
+<li>Implementing a system for the agent to explicitly request additional information when needed</li>
+</ol>
+<p>This experience emphasized the importance of thoughtful prompt engineering and context management when working with LLMs.</p>
+<h2 id="conclusion" class="relative group">Conclusion <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a></span></h2>
+<p>The SQL Agent represents a powerful bridge between natural language and databases, democratizing access to data and streamlining database interactions for users of all technical levels. By combining the natural language understanding of LLMs with robust database connectivity and intuitive visualization, this tool transforms how we interact with data.</p>
+<p>Beyond its practical utility, this project demonstrates the potential of AI agents to enhance specialized technical domains. Rather than replacing human expertise, these systems amplify it—allowing analysts to focus on insights rather than syntax, developers to work more efficiently, and organizations to unlock the full value of their data.</p>
+<p>The future of database interaction lies not in making everyone learn SQL, but in making databases understand us—and the SQL Agent is a significant step toward that vision.</p>
+
+      </div>
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+
+      
+  
+    
+    
+    
+      
+      
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="group flex text-right" href="/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                </span>
+              </span>
+              <span
+                class="ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&rarr;</span
+                ><span class="ltr:hidden rtl:inline">&larr;</span></span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+      </main><footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            © 2023 Nacer Kroudir
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    
+    
+      <div
+        class=" cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+      >
+        <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
+          <div
+            class="flex h-12 w-12 items-center justify-center dark:hidden"
+            title="Switch to dark appearance"
+          >
+            <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div
+            class="hidden h-12 w-12 items-center justify-center dark:flex"
+            title="Switch to light appearance"
+          >
+            <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url=""
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative inline-block align-text-bottom px-1 icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        <span class="relative inline-block align-text-bottom px-1 icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 Nacer Kroudir</copyright>
-    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Agent 🤖 - Building Your Personal AI Database Assistant</title>
+      <link>/blogs/sql-agent-building-your-personal-ai-database-assistant/</link>
+      <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/sql-agent-building-your-personal-ai-database-assistant/</guid>
+      <description>This blog details the creation of a SQL Agent that bridges the gap between natural language and database queries using LLMs. Learn how to build an intelligent assistant that helps users interact with databases through conversation, execute SQL queries with detailed feedback, and visualize results effectively.</description>
+    </item>
+    
     <item>
       <title>ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!</title>
       <link>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</link>

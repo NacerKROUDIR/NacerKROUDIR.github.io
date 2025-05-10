@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GenAI on Nacer KROUDIR</title>
-    <link>/tags/genai/</link>
-    <description>Recent content in GenAI on Nacer KROUDIR</description>
+    <title>DataViz on Nacer KROUDIR</title>
+    <link>/tags/dataviz/</link>
+    <description>Recent content in DataViz on Nacer KROUDIR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 Nacer Kroudir</copyright>
-    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/genai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/dataviz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL Agent 🤖 - Building Your Personal AI Database Assistant</title>
       <link>/blogs/sql-agent-building-your-personal-ai-database-assistant/</link>
@@ -15,15 +15,6 @@
       
       <guid>/blogs/sql-agent-building-your-personal-ai-database-assistant/</guid>
       <description>This blog details the creation of a SQL Agent that bridges the gap between natural language and database queries using LLMs. Learn how to build an intelligent assistant that helps users interact with databases through conversation, execute SQL queries with detailed feedback, and visualize results effectively.</description>
-    </item>
-    
-    <item>
-      <title>ApplyPal 🧠 - How to Build Your Own Career Advisor AI Agent!</title>
-      <link>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</link>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>/blogs/applypal-how-to-build-your-own-career-advisor-ai-agent/</guid>
-      <description>This blog explores Agentic AI, highlighting its ability to autonomously perform personalized tasks like resume evaluation, career guidance, and application tailoring using advanced NLP models. It showcases ApplyPal, a Career Advisor AI Agent built with GPT-4, LangChain, and Streamlit</description>
     </item>
     
   </channel>
